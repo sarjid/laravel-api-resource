@@ -43,7 +43,8 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        return new StudentResource($student);
+        // return new StudentResource($student);
+        return  StudentResource::make($student);
     }
 
     /**
@@ -56,6 +57,7 @@ class StudentController extends Controller
     public function update(StudentRequest $request, Student $student)
     {
         $student->update($request->validated());
+        // return new StudentResource($student);
         return new StudentResource($student);
     }
 
